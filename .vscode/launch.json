@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "gdbPath": "gdb-multiarch",
+            "cwd": "${workspaceRoot}",
+            // "executable": "${workspaceRoot}/cmake-build-debug/blink/blink.elf",
+            "executable": "${workspaceRoot}/cmake-build-debug/src/can2040-helloworld.elf",
+            "name": "Debug with OpenOCD (CAN2040)",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "serverpath": "/home/lamuguo/code/rp2040/openocd/src/openocd",
+            "configFiles": ["interface/cmsis-dap.cfg", "target/rp2040.cfg"],
+            "searchDir": ["/home/lamuguo/code/rp2040/openocd/tcl"],
+            "svdFile": "../pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "raw"
+        }
+    ]
+}
